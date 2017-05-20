@@ -10,7 +10,8 @@
 //------------------------------------------------------------------------------
 
 const rule = require("../../../lib/rules/no-use-before-define"),
-    RuleTester = require("../../../lib/testers/rule-tester");
+    RuleTester = require("../../../lib/testers/rule-tester"),
+    fixtureParser = require("../../fixtures/fixture-parser");
 
 //------------------------------------------------------------------------------
 // Tests
@@ -56,6 +57,16 @@ ruleTester.run("no-use-before-define", rule, {
             code: "var foo = () => bar; var bar;",
             parserOptions: { ecmaVersion: 6 },
             options: [{ variables: false }]
+        },
+
+        // Flow/babel-eslint (https://github.com/eslint/eslint/issues/8630)
+        {
+            code: [
+                "// @flow",
+                "type FieldOptions<T> = {| defaultValue: T |}",
+                "type DateFieldOptions = {| ...FieldOptions<Date> |}"
+            ].join("\n"),
+            parser: fixtureParser("babel-eslint7/flow-types")
         }
     ],
     invalid: [
