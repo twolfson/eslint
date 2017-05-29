@@ -35,6 +35,12 @@ This rule has a string option or an object option:
         "named": "always",
         "asyncArrow": "always"
     }],
+    // or
+    "space-before-function-paren": ["error", {
+        "declaration": "always",
+        "expression": "always",
+        "arrowExpression": "always"
+    }],
 }
 ```
 
@@ -344,6 +350,178 @@ Examples of **correct** code for this rule with the `{"anonymous": "ignore", "na
 
 ```js
 /*eslint space-before-function-paren: ["error", { "anonymous": "ignore", "named": "always" }]*/
+/*eslint-env es6*/
+
+var bar = function() {
+    // ...
+};
+
+var bar = function () {
+    // ...
+};
+
+function foo () {
+    // ...
+}
+
+class Foo {
+    constructor () {
+        // ...
+    }
+}
+
+var foo = {
+    bar () {
+        // ...
+    }
+};
+```
+
+### `{"declaration": "never", "expression": "always"", "arrowExpression": "always"}`
+
+Examples of **incorrect** code for this rule with the `{"declaration": "never", "expression": "always"", "arrowExpression": "always"}` option:
+
+```js
+/*eslint space-before-function-paren: ["error", {"declaration": "never", "expression": "always"", "arrowExpression": "always"}]*/
+/*eslint-env es6*/
+
+function foo () {
+    // ...
+}
+
+var bar = function() {
+    // ...
+};
+
+class Foo {
+    constructor () {
+        // ...
+    }
+}
+
+var foo = {
+    bar () {
+        // ...
+    }
+};
+
+var foo = async(a) => await a
+```
+
+Examples of **correct** code for this rule with the `{"declaration": "never", "expression": "always"", "arrowExpression": "always"}` option:
+
+```js
+/*eslint space-before-function-paren: ["error", {"declaration": "never", "expression": "always"", "arrowExpression": "always"}]*/
+/*eslint-env es6*/
+
+function foo() {
+    // ...
+}
+
+var bar = function () {
+    // ...
+};
+
+class Foo {
+    constructor() {
+        // ...
+    }
+}
+
+var foo = {
+    bar() {
+        // ...
+    }
+};
+
+var foo = async (a) => await a
+```
+
+### `{"declaration": "always", "expression": "never"}`
+
+Examples of **incorrect** code for this rule with the `{"declaration": "always", "expression": "never"}` option:
+
+```js
+/*eslint space-before-function-paren: ["error", { "declaration": "always", "expression": "never" }]*/
+/*eslint-env es6*/
+
+function foo() {
+    // ...
+}
+
+var bar = function () {
+    // ...
+};
+
+class Foo {
+    constructor() {
+        // ...
+    }
+}
+
+var foo = {
+    bar() {
+        // ...
+    }
+};
+```
+
+Examples of **correct** code for this rule with the `{"declaration": "always", "expression": "never"}` option:
+
+```js
+/*eslint space-before-function-paren: ["error", { "declaration": "always", "expression": "never" }]*/
+/*eslint-env es6*/
+
+function foo () {
+    // ...
+}
+
+var bar = function() {
+    // ...
+};
+
+class Foo {
+    constructor () {
+        // ...
+    }
+}
+
+var foo = {
+    bar () {
+        // ...
+    }
+};
+```
+
+### `{"declaration": "always", "expression": "ignore"}`
+
+Examples of **incorrect** code for this rule with the `{"declaration": "always", "expression": "ignore"}` option:
+
+```js
+/*eslint space-before-function-paren: ["error", { "declaration": "always", "expression": "ignore" }]*/
+/*eslint-env es6*/
+
+function foo() {
+    // ...
+}
+
+class Foo {
+    constructor() {
+        // ...
+    }
+}
+
+var foo = {
+    bar() {
+        // ...
+    }
+};
+```
+
+Examples of **correct** code for this rule with the `{"declaration": "always", "expression": "ignore"}` option:
+
+```js
+/*eslint space-before-function-paren: ["error", { "declaration": "always", "expression": "ignore" }]*/
 /*eslint-env es6*/
 
 var bar = function() {
