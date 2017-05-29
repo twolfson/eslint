@@ -112,7 +112,19 @@ ruleTester.run("space-before-function-paren", rule, {
         { code: "async() => 1", options: [{ asyncArrow: "ignore" }], parserOptions: { ecmaVersion: 8 } },
         { code: "async () => 1", parserOptions: { ecmaVersion: 8 } },
         { code: "async () => 1", options: ["always"], parserOptions: { ecmaVersion: 8 } },
-        { code: "async() => 1", options: ["never"], parserOptions: { ecmaVersion: 8 } }
+        { code: "async() => 1", options: ["never"], parserOptions: { ecmaVersion: 8 } },
+
+        // Alternative object syntax
+        // TODO: Add opposite tests
+        { code: "function foo() {}", options: [{ declaration: "never" }] },
+        { code: "function foo () {}", options: [{ declaration: "always" }] },
+        { code: "var bar = function () {}", options: [{ expression: "always" }] },
+        { code: "var bar = function foo () {}", options: [{ expression: "always" }] },
+        { code: "var bar = function() {}", options: [{ expression: "never" }] },
+        { code: "var bar = function foo() {}", options: [{ expression: "never" }] },
+        { code: "() => 1", options: [{ arrowExpression: "never" }], parserOptions: { ecmaVersion: 6 } },
+        { code: "async() => 1", options: [{ arrowExpression: "never" }], parserOptions: { ecmaVersion: 8 } },
+        { code: "async () => 1", options: [{ arrowExpression: "always" }], parserOptions: { ecmaVersion: 8 } }
     ],
 
     invalid: [
