@@ -116,6 +116,7 @@ ruleTester.run("space-before-function-paren", rule, {
 
         // Alternative object syntax
         // TODO: Add opposite tests
+        // TODO: Add link to old JSCS rules
         { code: "function foo() {}", options: [{ declaration: "never" }] },
         { code: "function foo () {}", options: [{ declaration: "always" }] },
         { code: "var bar = function () {}", options: [{ expression: "always" }] },
