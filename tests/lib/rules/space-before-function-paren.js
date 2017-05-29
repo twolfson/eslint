@@ -123,7 +123,9 @@ ruleTester.run("space-before-function-paren", rule, {
         { code: "var bar = function foo () {}", options: [{ expression: "always" }] },
         { code: "var bar = function() {}", options: [{ expression: "never" }] },
         { code: "var bar = function foo() {}", options: [{ expression: "never" }] },
-        { code: "() => 1", options: [{ arrowExpression: "never" }], parserOptions: { ecmaVersion: 6 } },
+
+        // Trigger alternative syntax code path
+        { code: "() => 1", options: [{ declaration: "never" }], parserOptions: { ecmaVersion: 6 } },
         { code: "async() => 1", options: [{ arrowExpression: "never" }], parserOptions: { ecmaVersion: 8 } },
         { code: "async () => 1", options: [{ arrowExpression: "always" }], parserOptions: { ecmaVersion: 8 } }
     ],
