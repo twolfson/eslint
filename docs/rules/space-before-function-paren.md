@@ -366,3 +366,10 @@ You can turn this rule off if you are not concerned with the consistency of spac
 
 * [space-after-keywords](space-after-keywords.md)
 * [space-return-throw-case](space-return-throw-case.md)
+
+## Compatibility
+
+* **JSCS**: This rule roughly maps to [disallowSpacesInFunctionExpression](http://jscs.info/rule/disallowSpacesInFunctionExpression)
+* **JSCS**: This rule roughly maps to [requireSpacesInFunctionExpression](http://jscs.info/rule/requireSpacesInFunctionExpression)
+* **JSCS**: This rule roughly maps to [disallowSpacesInFunctionDeclaration](http://jscs.info/rule/disallowSpacesInFunctionDeclaration)
+* **JSCS**: This rule roughly maps to [requireSpacesInFunctionDeclaration](http://jscs.info/rule/requireSpacesInFunctionDeclaration)

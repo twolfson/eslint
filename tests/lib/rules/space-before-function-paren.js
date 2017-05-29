@@ -115,8 +115,6 @@ ruleTester.run("space-before-function-paren", rule, {
         { code: "async() => 1", options: ["never"], parserOptions: { ecmaVersion: 8 } },
 
         // Alternative object syntax
-        // TODO: Add opposite tests
-        // TODO: Add link to old JSCS rules
         { code: "function foo() {}", options: [{ declaration: "never" }] },
         { code: "function foo () {}", options: [{ declaration: "always" }] },
         { code: "function foo() {}", options: [{ declaration: "ignore" }] },
